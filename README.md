@@ -115,6 +115,3 @@ npm run dev
 └── .env.example
 ```
 
-## License
-
-MIT
