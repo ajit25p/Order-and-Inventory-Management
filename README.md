@@ -15,7 +15,7 @@ A full-stack application for managing products, customers, orders, and inventory
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone 
 cd "Order and Inventory Management"
 
 # 2. Copy environment file
@@ -90,40 +90,6 @@ npm run dev
 | ------ | ------------- | ---------------------- |
 | GET    | `/dashboard`  | Summary stats          |
 
-## Deployment
-
-### Backend → Render
-
-1. Create a **Web Service** on [render.com](https://render.com)
-2. Connect your GitHub repository
-3. Set **Root Directory** to `backend`
-4. Set **Build Command**: `pip install -r requirements.txt`
-5. Set **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-6. Add environment variables:
-   - `DATABASE_URL` — your Render PostgreSQL connection string
-   - `CORS_ORIGINS` — your Vercel frontend URL
-
-### Database → Render PostgreSQL
-
-1. Create a **PostgreSQL** instance on Render (free tier)
-2. Copy the **External Database URL**
-3. Use it as `DATABASE_URL` for the backend
-
-### Frontend → Vercel
-
-1. Import your GitHub repository on [vercel.com](https://vercel.com)
-2. Set **Root Directory** to `frontend`
-3. Set **Framework Preset** to `Vite`
-4. Add environment variable:
-   - `VITE_API_URL` — your Render backend URL (e.g., `https://your-backend.onrender.com`)
-
-### Docker Hub
-
-```bash
-# Build and push backend image
-docker build -t yourusername/inventory-backend ./backend
-docker push yourusername/inventory-backend
-```
 
 ## Project Structure
 
